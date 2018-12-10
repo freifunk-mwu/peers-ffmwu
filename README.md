@@ -1,4 +1,4 @@
-# peers-ffmwu.git
+# peers-ffmwu.git &nbsp;&nbsp; [![Build Status](https://travis-ci.org/freifunk-mwu/peers-ffmwu.svg?branch=master)](https://travis-ci.org/freifunk-mwu/peers-ffmwu)
 
 Hier werden die öffentlichen *fastd*-Schlüssel des [Freifunk MWU](http://freifunk-mwu.de/) hinterlegt.
 
