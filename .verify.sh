@@ -5,5 +5,5 @@ find . -type f -not -path '*/\.*' -not -name '*.md' | while read f; do
 		continue
 	fi
 	echo "checking $f..."
-	fastd --verify-config --config-peer $f
+	fastd --verify-config --config-peer "$f"
 done
