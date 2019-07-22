@@ -1,13 +1,13 @@
 language: c
 sudo: required
-dist: xenial
+dist: bionic
+
+addons:
+  apt:
+    update: true
 
 before_install:
- - sudo apt install apt-transport-https
- - sudo apt-key adv --keyserver pool.sks-keyservers.net --recv-keys 0x16EF3F64CB201D9C
- - echo "deb https://repo.universe-factory.net/debian/ sid main" | sudo tee -a /etc/apt/sources.list
- - sudo apt update
- - sudo apt install -y --force-yes fastd
+ - sudo apt install -y fastd
 
 script:
  - ./.verify.sh
@@ -19,13 +19,3 @@ notifications:
       - keys@freifunk-mwu.de
     on_success: always
     on_failure: always
-  irc:
-    channels:
-      - "irc.hackint.org#ffmwu-feed"
-    template:
-      - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-      - "Build details : %{build_url}"
-    on_success: always
-    on_failure: always
-    use_notice: true
-    skip_join: true
