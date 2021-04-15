@@ -1,0 +1,21 @@
+name: Verify Keys
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  verify_keys:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install fastd
+      - name: verify fastd config
+        run: ./.verify.sh
+      - name: verify fastd keys
+        run: ./.check.py
