@@ -19,3 +19,9 @@ notifications:
       - keys@freifunk-mwu.de
     on_success: always
     on_failure: always
+  irc:
+    channels:
+      - "ircs://irc.hackint.org:6697/#ffmwu-feed"
+    on_success: always
+    on_failure: always
+
