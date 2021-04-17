@@ -22,6 +22,9 @@ notifications:
   irc:
     channels:
       - "ircs://irc.hackint.org:6697/#ffmwu-feed"
+    template:
+      - "%{repository_slug} (%{branch} - %{commit}): %{message}"
+      - "Build details : %{build_url}"
     on_success: always
     on_failure: always
 
